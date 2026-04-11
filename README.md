@@ -1,3 +1,7 @@
+Launch - \Taiko FullAlt Tracker 1.0.1\dist\FullAlt Tracker.exe
+
+
+
 This program was mostly made for fun and for tracking full alt in osu!taiko.
 
 Stable performance or perfect accuracy is NOT guaranteed — this is more of an experimental project.
