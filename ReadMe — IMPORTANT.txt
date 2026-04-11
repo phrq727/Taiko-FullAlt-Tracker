@@ -37,7 +37,7 @@ Audio:
 
 If no audio is selected — there will be no sound (default)
 
-ADD AUDIO — load a sound file (.mp3 / .wav)  
+ADD AUDIO — load a sound file (.mp3)  
 X — remove sound  
 
 
