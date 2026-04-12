@@ -1,71 +1,65 @@
-Launch - \Taiko FullAlt Tracker 1.0.1\dist\FullAlt Tracker.exe
+<img width="330" height="520" alt="FullAlt_Tracker_LRkr3OXM0t" src="https://github.com/user-attachments/assets/8fddc86e-b780-469d-a01e-93447ddc1300" />
 
-
-
+# ENG
 This program was mostly made for fun and for tracking full alt in osu!taiko.
 
 Stable performance or perfect accuracy is NOT guaranteed — this is more of an experimental project.
 
 
-!!! Important before launch !!!
+!!! Important before starting!!!
 
-Before using the program, make sure your Windows keyboard layout is set to English (ENG).
+Before using, make sure your Windows keyboard layout is set to English (ENG).
 
-Otherwise, the program may not work correctly or may not detect input at all.
+Otherwise, the program may not work correctly or respond to input.
 
+FullAlt Tracker is a program for tracking full alternation (hand alternation) in osu!taiko.
 
+It analyzes keystrokes in real time and counts technical errors:
 
-FullAlt Tracker is a tool for tracking full alternation (hand switching) in osu!taiko.
+Rolls — when you use the same hand twice in a row
+Doubles — when you press the same button twice in a row
+Total — total number of errors
 
-It analyzes key presses in real time and counts mistakes in your technique:
+Default game keys: S, D, K, L
 
-Rolls — when you use the same hand twice in a row  
-Doubles — when you press the same key twice in a row  
-Total — total number of mistakes  
-
-Default keys: S D K L
-
-
-The program can also play a sound on mistakes and allows you to configure keybinds.
-
+The program can also play a sound for errors and allows you to customize keybinds:
 
 UI buttons:
 
-CLEAR — reset statistics  
-BIND — set a custom reset key  
-X — remove reset key  
-KEYBINDS — rebind game keys (4 steps: LK, LD, RD, RK)
+Clear — reset statistics
+Clear Key — assign a reset key (X — delete the reset keybind)
+Keybinds — reassign game keys (4 steps: LK, LD, RD, RK)
 
+The system supports custom and standard sound effects.
 
-Audio:
+Sound is off by default.
 
-If no audio is selected — there will be no sound (default)
+Toggle: Toggle for quickly enabling or disabling audio.
 
-ADD AUDIO — load a sound file (.mp3)  
-X — remove sound  
+Select Audio: Upload a custom audio file in .mp3 or .wav format.
 
+"X" button: Reset settings. Restores the standard sound (default)
 
-You can also use this program for osu!standard.
+The program can also be used for osu!standard.
 
-To do this, you need to set up 4 keys:
-1 2 3 4 (Left Kat, Left Don, Right Don, Right Kat)
+To do this, you need to configure four keys:
+1 2 3 4 (left cut, left dong, right dong, right cut)
 
-Since osu!standard only uses two keys, you should bind your actual gameplay keys to:
-- Left Don
-- Right Don
+Since osu!standard only uses two buttons, bind the game keys to the "red" buttons:
+- left dong
+- right dong
 
-And assign Kat keys (Left Kat / Right Kat) to any other keys that you don’t use while playing.
+And assign the cuts (left and right) to any other keys that aren't used during gameplay.
 
+If you have any questions or have any suggestions:
 
-If you have questions or suggestions:
+https://phrq.727pp.ru/
 
-https://phrq.727pp.ru/  
+@phrqxi - TG
 
-@phrqxi - Telegram
+---
 
------------------------------------------------------------------------------------------------
-
-  RU
+# RUS
 
 Эта программа в основном сделана по приколу и для отслеживания фуллальта в osu!taiko.
 
@@ -84,7 +78,7 @@ FullAlt Tracker — это программа для отслеживания п
 
 Она анализирует нажатия клавиш в реальном времени и считает ошибки в технике:
 
-Rolls — когда ты два раза подряд используешь одну и ту же “руку”
+Rolls — когда ты два раза подряд используешь одну и ту же руку
 Doubles — когда ты два раза подряд нажимаешь одну и ту же кнопку
 Total — общее количество ошибок
 
@@ -94,17 +88,21 @@ Total — общее количество ошибок
 
 UI кнопки:
 
-CLEAR — сброс статистики
-BIND — назначить клавишу сброса
-X — удалить бинд сброса
-KEYBINDS — переназначение игровых клавиш (4 шага: LK, LD, RD, RK)
+Clear — сброс статистики
+Clear Key — назначить клавишу сброса (X — удалить бинд сброса)
+Keybinds — переназначение игровых клавиш (4 шага: LK, LD, RD, RK)
 
-Аудио:
 
-Если аудио не выбрано - звука не будет (по умолчанию)
 
-ADD AUDIO — загрузка звука (.mp3)
-X — удалить звук
+Система поддерживает работу с кастомными и стандартными звуковыми эффектами.
+
+По умолчанию звук выключен.
+
+Toggle: Переключатель для быстрой активации или деактивации аудио.
+
+Select Audio: Загрузка собственного звукового файла в формате .mp3 или .wav.
+
+Кнопка «X»: Сброс настроек. Возвращает стандартный звук (по умолчанию)
 
 
 Программу также можно использовать для osu!standard.
@@ -112,7 +110,7 @@ X — удалить звук
 Для этого нужно настроить 4 клавиши:
 1 2 3 4 (левый кат, левый дон, правый дон, правый кат)
 
-Так как в osu!standard используется только две кнопки, привяжите игровые клавиши к:
+Так как в osu!standard используется только две кнопки, привяжите игровые клавиши к "красным" кнопкам:
 - левому дону
 - правому дону
 
