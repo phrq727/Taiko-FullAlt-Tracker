@@ -43,8 +43,8 @@ To do this, you need to configure four keys:
 1 2 3 4 (left cut, left dong, right dong, right cut)
 
 Since osu!standard only uses two buttons, bind the game keys to the "red" buttons:
-- left dong
-- right dong
+- left don
+- right don
 
 And assign the cuts (left and right) to any other keys that aren't used during gameplay.
 
