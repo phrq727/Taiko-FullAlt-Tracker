@@ -6,7 +6,7 @@ This program was mostly made for fun and for tracking full alt in osu!taiko.
 Stable performance or perfect accuracy is NOT guaranteed — this is more of an experimental project.
 
 
-!!! Important before starting!!!
+!!! Important before starting !!!
 
 Before using, make sure your Windows keyboard layout is set to English (ENG).
 
@@ -16,9 +16,9 @@ FullAlt Tracker is a program for tracking full alternation (hand alternation) in
 
 It analyzes keystrokes in real time and counts technical errors:
 
-Rolls — when you use the same hand twice in a row
-Doubles — when you press the same button twice in a row
-Total — total number of errors
+- Rolls — when you use the same hand twice in a row
+- Doubles — when you press the same button twice in a row
+- Total — total number of errors
 
 Default game keys: S, D, K, L
 
@@ -26,19 +26,16 @@ The program can also play a sound for errors and allows you to customize keybind
 
 UI buttons:
 
-Clear — reset statistics
-Clear Key — assign a reset key (X — delete the reset keybind)
-Keybinds — reassign game keys (4 steps: LK, LD, RD, RK)
+- Clear — reset statistics
+- Clear Key — assign a reset key (X — delete the reset keybind)
+- Keybinds — reassign game keys (4 steps: LK, LD, RD, RK)
+- Toggle: Toggle for enabling or disabling audio.
+- Select Audio: Upload a custom audio file in .mp3 or .wav format. (X - Restores the standard sound)
 
 The system supports custom and standard sound effects.
 
 Sound is off by default.
 
-Toggle: Toggle for quickly enabling or disabling audio.
-
-Select Audio: Upload a custom audio file in .mp3 or .wav format.
-
-"X" button: Reset settings. Restores the standard sound (default)
 
 The program can also be used for osu!standard.
 
@@ -78,9 +75,9 @@ FullAlt Tracker — это программа для отслеживания п
 
 Она анализирует нажатия клавиш в реальном времени и считает ошибки в технике:
 
-Rolls — когда ты два раза подряд используешь одну и ту же руку
-Doubles — когда ты два раза подряд нажимаешь одну и ту же кнопку
-Total — общее количество ошибок
+- Rolls — когда ты два раза подряд используешь одну и ту же руку
+- Doubles — когда ты два раза подряд нажимаешь одну и ту же кнопку
+- Total — общее количество ошибок
 
 Игровые кнопки по умолчанию S D K L
 
@@ -88,21 +85,16 @@ Total — общее количество ошибок
 
 UI кнопки:
 
-Clear — сброс статистики
-Clear Key — назначить клавишу сброса (X — удалить бинд сброса)
-Keybinds — переназначение игровых клавиш (4 шага: LK, LD, RD, RK)
-
+- Clear — сброс статистики
+- Clear Key — назначить клавишу сброса (X — удалить бинд сброса)
+- Keybinds — переназначение игровых клавиш (4 шага: LK, LD, RD, RK)
+- Toggle: Переключатель для активации или деактивации аудио (X - Возвращает стандартный звук)
+- Select Audio: Загрузка собственного звукового файла в формате .mp3 или .wav.
 
 
 Система поддерживает работу с кастомными и стандартными звуковыми эффектами.
 
 По умолчанию звук выключен.
-
-Toggle: Переключатель для быстрой активации или деактивации аудио.
-
-Select Audio: Загрузка собственного звукового файла в формате .mp3 или .wav.
-
-Кнопка «X»: Сброс настроек. Возвращает стандартный звук (по умолчанию)
 
 
 Программу также можно использовать для osu!standard.
