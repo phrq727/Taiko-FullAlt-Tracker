@@ -29,8 +29,8 @@ UI buttons:
 - Clear — reset statistics
 - Clear Key — assign a reset key (X — delete the reset keybind)
 - Keybinds — reassign game keys (4 steps: LK, LD, RD, RK)
-- Toggle — Toggle for enabling or disabling audio.
-- Select Audio — Upload a custom audio file in .mp3 or .wav format. (X - Restores the standard sound)
+- Toggle — toggle for enabling or disabling audio.
+- Select Audio — upload a custom audio file in .mp3 or .wav format. (X - Restores the standard sound)
 
 The system supports custom and standard sound effects.
 
@@ -88,8 +88,8 @@ UI кнопки:
 - Clear — сброс статистики
 - Clear Key — назначить клавишу сброса (X — удалить бинд сброса)
 - Keybinds — переназначение игровых клавиш (4 шага: LK, LD, RD, RK)
-- Toggle — Переключатель для активации или деактивации аудио (X - Возвращает стандартный звук)
-- Select Audio — Загрузка собственного звукового файла в формате .mp3 или .wav.
+- Toggle — переключатель для активации или деактивации аудио (X - Возвращает стандартный звук)
+- Select Audio — загрузка собственного звукового файла в формате .mp3 или .wav.
 
 
 Система поддерживает работу с кастомными и стандартными звуковыми эффектами.
