@@ -8,28 +8,25 @@ import time
 import json
 
 def resource_path(relative_path):
-    """ Получает абсолютный путь к ресурсам, работает для dev и для PyInstaller """
     try:
-        # PyInstaller создает временную папку и хранит путь в _MEIPASS
         base_path = sys._MEIPASS
     except Exception:
         base_path = os.path.abspath(".")
-
     return os.path.join(base_path, relative_path)
     
 icon_path = resource_path("assets/icon.png")
 font_path = resource_path("assets/font.ttf")
 sound_path = resource_path("assets/altbreak.wav")
 
-# Инициализация
 pygame.init()
 pygame.mixer.init()
 
 WIDTH, HEIGHT = 330, 520 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Phrq's FullAlt Tracker v1.1.0")
+pygame.display.set_caption("Phrq's FullAlt Tracker v1.1.1")
 
-pygame.display.set_icon(pygame.image.load(icon_path))
+if os.path.exists(icon_path):
+    pygame.display.set_icon(pygame.image.load(icon_path))
 
 # --- ШРИФТЫ ---
 FONT_NAME = font_path
@@ -49,10 +46,12 @@ TOTAL_GRAY = (170, 170, 170)
 TEXT_GRAY = (150, 150, 150)
 RESET_SETTINGS_COLOR = (153, 153, 153)
 P_RED, P_GREEN = (180, 120, 120), (120, 180, 120)
+ACC_PURPLE = (197, 138, 249)
 
 # --- ПЕРЕМЕННЫЕ ---
 stats_lock = Lock()
 random_roll, double_press = 0, 0
+total_game_presses = 0 
 last_key, last_hand = None, None
 pressed_keys = set()
 running = True
@@ -138,7 +137,7 @@ def reset_everything():
     load_config()
 
 def on_press(key):
-    global bind_mode, reset_key_obj, reset_key_id, game_bind_mode, game_bind_step, random_roll, double_press, last_key, last_hand
+    global bind_mode, reset_key_obj, reset_key_id, game_bind_mode, game_bind_step, random_roll, double_press, total_game_presses, last_key, last_hand
     k_name = get_key_display(key).lower()
     if bind_mode: reset_key_obj, reset_key_id = key, get_key_id(key); bind_mode = False; return
     if game_bind_mode:
@@ -150,13 +149,14 @@ def on_press(key):
         if game_bind_step >= 4: game_bind_mode = False
         return
     if key == keyboard.Key.f13 or (reset_key_obj and key == reset_key_obj):
-        with stats_lock: random_roll, double_press, last_key, last_hand = 0, 0, None, None; pressed_keys.clear()
+        with stats_lock: random_roll, double_press, total_game_presses, last_key, last_hand = 0, 0, 0, None, None; pressed_keys.clear()
         return
     if k_name in pressed_keys: return
     pressed_keys.add(k_name)
     if k_name not in LEFT_KEYS and k_name not in RIGHT_KEYS: return
     curr_hand = 'L' if k_name in LEFT_KEYS else 'R'
     with stats_lock:
+        total_game_presses += 1 
         if last_key is not None:
             if k_name == last_key: 
                 double_press += 1
@@ -227,13 +227,12 @@ while running:
             elif not (bind_mode or game_bind_mode):
                 if btn_toggle.collidepoint(event.pos) and audio_loaded: audio_active = not audio_active
                 elif btn_clear.collidepoint(event.pos):
-                    with stats_lock: random_roll, double_press = 0, 0
+                    with stats_lock: random_roll, double_press, total_game_presses = 0, 0, 0
                 elif btn_select.collidepoint(event.pos):
                     root = tk.Tk(); root.withdraw(); root.attributes("-topmost", True)
                     p = filedialog.askopenfilename(filetypes=[("Audio", "*.mp3 *.wav")]); root.destroy()
                     if p: validate_and_load(p)
                 elif btn_del_audio.collidepoint(event.pos):
-                    # Исправленная логика удаления
                     audio_loaded, sound, audio_name, audio_path = False, None, "None", ""
                     if validate_and_load(sound_path, silent=True): pass
                 elif btn_keybinds.collidepoint(event.pos): game_bind_mode, game_bind_step = True, 0
@@ -249,9 +248,15 @@ while running:
 
     screen.fill((20, 20, 20))
     with stats_lock:
-        screen.blit(font.render(f"Rolls: {random_roll}", True, (255, 255, 255)), (50, 20))
-        screen.blit(font.render(f"Doubles: {double_press}", True, (255, 255, 255)), (50, 60))
-        screen.blit(font.render(f"Total: {random_roll + double_press}", True, TOTAL_GRAY), (50, 100))
+        screen.blit(font.render(f"Rolls: {random_roll}", True, (255, 255, 255)), (33, 20))
+        screen.blit(font.render(f"Doubles: {double_press}", True, (255, 255, 255)), (33, 60))
+        screen.blit(font.render(f"Total: {random_roll + double_press}", True, TOTAL_GRAY), (33, 100))
+        
+        acc = 100.0
+        if total_game_presses > 0:
+            err_percent = ((random_roll + double_press) / total_game_presses) * 100
+            acc = 100.0 - err_percent
+        screen.blit(font.render(f"{acc:.2f}% fullalt", True, ACC_PURPLE), (33, 140))
 
     ty = 210
     screen.blit(small.render(f"Clear Key: {get_key_display(reset_key_obj)}", True, TEXT_GRAY), (30, ty))
