@@ -23,7 +23,7 @@ pygame.mixer.init()
 
 WIDTH, HEIGHT = 330, 520 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Phrq's FullAlt Tracker v1.1.1")
+pygame.display.set_caption("Phrq's FullAlt Tracker v1.1.2")
 
 if os.path.exists(icon_path):
     pygame.display.set_icon(pygame.image.load(icon_path))
@@ -248,19 +248,19 @@ while running:
 
     screen.fill((20, 20, 20))
     with stats_lock:
-        # Позиция x=33
         screen.blit(font.render(f"Rolls: {random_roll}", True, (255, 255, 255)), (33, 20))
         screen.blit(font.render(f"Doubles: {double_press}", True, (255, 255, 255)), (33, 60))
-        screen.blit(font.render(f"Total: {random_roll + double_press}", True, TOTAL_GRAY), (33, 100))
+        
+        # --- ИЗМЕНЕННАЯ СТРОКА ТУТ ---
+        all_errors = random_roll + double_press
+        screen.blit(font.render(f"Total: {all_errors} / {total_game_presses}", True, TOTAL_GRAY), (33, 100))
         
         acc = 100.0
         if total_game_presses > 0:
-            # Штраф: Роллы + Даблы*2
             penalty = random_roll + (double_press * 2)
             err_percent = (penalty / total_game_presses) * 100
             acc = max(0.0, 100.0 - err_percent)
             
-        # Формат xx.xx% fullalt
         screen.blit(font.render(f"{acc:.2f}% fullalt", True, ACC_PURPLE), (33, 140))
 
     ty = 210
