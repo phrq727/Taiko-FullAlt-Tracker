@@ -248,14 +248,19 @@ while running:
 
     screen.fill((20, 20, 20))
     with stats_lock:
+        # Позиция x=33
         screen.blit(font.render(f"Rolls: {random_roll}", True, (255, 255, 255)), (33, 20))
         screen.blit(font.render(f"Doubles: {double_press}", True, (255, 255, 255)), (33, 60))
         screen.blit(font.render(f"Total: {random_roll + double_press}", True, TOTAL_GRAY), (33, 100))
         
         acc = 100.0
         if total_game_presses > 0:
-            err_percent = ((random_roll + double_press) / total_game_presses) * 100
-            acc = 100.0 - err_percent
+            # Штраф: Роллы + Даблы*2
+            penalty = random_roll + (double_press * 2)
+            err_percent = (penalty / total_game_presses) * 100
+            acc = max(0.0, 100.0 - err_percent)
+            
+        # Формат xx.xx% fullalt
         screen.blit(font.render(f"{acc:.2f}% fullalt", True, ACC_PURPLE), (33, 140))
 
     ty = 210
