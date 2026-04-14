@@ -1,4 +1,5 @@
-<img width="330" height="520" alt="FullAlt_Tracker_LRkr3OXM0t" src="https://github.com/user-attachments/assets/8fddc86e-b780-469d-a01e-93447ddc1300" />
+<img width="330" height="520" alt="python_V0Idw2M1GF" src="https://github.com/user-attachments/assets/cc512869-58ef-4751-a0bd-6f2900dfecb8" />
+
 
 # ENG
 This program was mostly made for fun and for tracking full alt in osu!taiko.
