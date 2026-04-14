@@ -20,7 +20,7 @@ It analyzes keystrokes in real time and counts technical errors:
 - Rolls — when you use the same hand twice in a row
 - Doubles — when you press the same button twice in a row
 - Total — total number of errors
-- X% fullalt - fullalt accuracy
+- X% fullalt - fullalt accuracy (x1 penalty for rolls, x2 for doubles)
 
 Default game keys: S, D, K, L
 
@@ -80,7 +80,7 @@ FullAlt Tracker — это программа для отслеживания п
 - Rolls — когда ты два раза подряд используешь одну и ту же руку
 - Doubles — когда ты два раза подряд нажимаешь одну и ту же кнопку
 - Total — общее количество ошибок
-- X % fullalt - аккуратность фуллальта
+- X % fullalt - аккуратность фуллальта (штраф x1 за роллы, x2 за даблы)
 
 Игровые кнопки по умолчанию S D K L
 
