@@ -1,4 +1,6 @@
-<img width="330" height="520" alt="python_V0Idw2M1GF" src="https://github.com/user-attachments/assets/cc512869-58ef-4751-a0bd-6f2900dfecb8" />
+<img width="330" height="520" alt="Taiko_FullAlt_Tracker_v1 1 2_tIzXrWfMhO" src="https://github.com/user-attachments/assets/5bbde63e-ba10-46b8-b254-078bcfca424d" />
+
+
 
 
 # ENG
